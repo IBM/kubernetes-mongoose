@@ -1,0 +1,33 @@
+---
+language: node_js
+node_js: lts/*
+sudo: required
+
+services:
+  - docker
+
+addons:
+  apt:
+    sources:
+      - debian-sid
+    packages:
+      - shellcheck
+
+matrix:
+  fast_finish: true
+
+env:
+  - TEST_RUN="./tests/test-docker.sh"
+
+before_install:
+  - npm install eslint
+  - sudo pip install yamllint
+
+install: true
+
+before_script:
+  - "./tests/test-eslint.sh"
+  - "./tests/test-shellcheck.sh"
+  - "./tests/test-yamllint.sh"
+
+script: "$TEST_RUN"
