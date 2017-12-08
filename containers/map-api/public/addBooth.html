@@ -1,21 +1,23 @@
 <html>
-<head>
-<title>Add Booth</title>
-<script src="js/submit.js"></script>
-</head>
-<body>
-<a href="/">Home</a> / <a href="/booth">Add Booth</a> / <a href="/beacon">Add Beacon</a> / <a href="/event">Add Event</a>
-/ <a href="/booth/list">Booth List</a> / <a href="/beacon/list">Beacon List</a> / <a href="/event/list">Event List</a><br />
-Hello, Booth! <br/>
-<input id="boothId" type="text" name="boothId" placeholder="Booth ID" > <br/>
-<input id="unit" type="text" name="unit" placeholder="Unit Name"> <br/>
-<input id="description" type="text" name="description" placeholder="Description"> <br/>
-<input id="measurementUnit" type="text" name="measurementUnit" placeholder="Measurement Unit"> <br/>
-<input id="xDimension" type="number" name="xDimension" placeholder="X (Length)"> <br/>
-<input id="yDimension" type="number" name="yDimension" placeholder="Y (Width)"> <br/>
-<input id="x" type="number" name="x" placeholder="X Location"> <br/>
-<input id="y" type="number" name="y" placeholder="Y Location"> <br/>
-<input id="contact" type="text" name="contact" placeholder="Contact"> <br/>
-<button onclick="addBooth()">Add Booth</button> <br/>
-</body>
+  <head>
+    <title>Add Booth</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <a href="/">Home</a> / <a href="/booth">Add Booth</a> / <a href="/beacon">Add Beacon</a> / <a href="/event">Add Event</a>
+    / <a href="/booth/list">Booth List</a> / <a href="/beacon/list">Beacon List</a> / <a href="/event/list">Event List</a>
+    <p>Hello, Booth!</p>
+    <input id="boothId" name="boothId" placeholder="Booth ID" >
+    <input id="unit" name="unit" placeholder="Unit Name">
+    <input id="description" name="description" placeholder="Description">
+    <input id="measurementUnit" name="measurementUnit" placeholder="Measurement Unit">
+    <input id="xDimension" type="number" name="xDimension" placeholder="X (Length)">
+    <input id="yDimension" type="number" name="yDimension" placeholder="Y (Width)">
+    <input id="x" type="number" name="x" placeholder="X Location">
+    <input id="y" type="number" name="y" placeholder="Y Location">
+    <input id="contact" name="contact" placeholder="Contact">
+    <button id="addBooth">Add Booth</button>
+
+    <script src="js/submit.js"></script>
+  </body>
 </html>

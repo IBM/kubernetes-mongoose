@@ -1,19 +1,21 @@
 <html>
-<head>
-<title>Add Event</title>
-<script src="js/submit.js"></script>
-</head>
-<body>
-<a href="/">Home</a> / <a href="/booth">Add Booth</a> / <a href="/beacon">Add Beacon</a> / <a href="/event">Add Event</a>
-/ <a href="/booth/list">Booth List</a> / <a href="/beacon/list">Beacon List</a> / <a href="/event/list">Event List</a><br />
-Hello, Event! <br/>
-<input id="eventId" type="text" name="eventId" placeholder="Event ID" > <br/>
-<input id="eventDescription" type="text" name="eventDescription" placeholder="Event Description"> <br/>
-<input id="location" type="text" name="location" placeholder="Location"> <br/>
-<input id="startDate" type="date" name="startDate" placeholder="Start Date"> <br/>
-<input id="endDate" type="date" name="endDate" placeholder="End Date"> <br/>
-<input id="map" type="text" name="map" placeholder="Map"> <br/>
-<input id="beacons" type="text" name="beacons" placeholder="Beacons"> <br/>
-<button onclick="addEvent()">Add Event</button> <br/>
-</body>
+  <head>
+    <title>Add Event</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <a href="/">Home</a> / <a href="/booth">Add Booth</a> / <a href="/beacon">Add Beacon</a> / <a href="/event">Add Event</a>
+    / <a href="/booth/list">Booth List</a> / <a href="/beacon/list">Beacon List</a> / <a href="/event/list">Event List</a>
+    <p>Hello, Event!</p>
+    <input id="eventId" name="eventId" placeholder="Event ID" >
+    <input id="eventDescription" name="eventDescription" placeholder="Event Description">
+    <input id="location" name="location" placeholder="Location">
+    <input id="startDate" type="date" name="startDate" placeholder="Start Date">
+    <input id="endDate" type="date" name="endDate" placeholder="End Date">
+    <input id="map" name="map" placeholder="Map">
+    <input id="beacons" name="beacons" placeholder="Beacons">
+    <button id="addEvent">Add Event</button>
+
+    <script src="js/submit.js"></script>
+  </body>
 </html>
