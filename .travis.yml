@@ -20,13 +20,15 @@ env:
   - TEST_RUN="./tests/test-docker.sh"
 
 before_install:
-  - npm install eslint
+  - npm install eslint html-lint csslint
   - sudo pip install yamllint
 
 install: true
 
 before_script:
+  - "./tests/test-csslint.sh"
   - "./tests/test-eslint.sh"
+  - "./tests/test-html-lint.sh"
   - "./tests/test-shellcheck.sh"
   - "./tests/test-yamllint.sh"
 

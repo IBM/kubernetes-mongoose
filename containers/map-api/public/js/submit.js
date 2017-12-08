@@ -1,4 +1,19 @@
 /*global document:false alert:false XMLHttpRequest:false */
+
+let boothButton = document.getElementById("addBooth");
+let beaconButton = document.getElementById("addBeacon");
+let eventButton = document.getElementById("addEvent");
+
+if (boothButton) {
+  boothButton.addEventListener("click", addBooth);
+}
+if (beaconButton) {
+  beaconButton.addEventListener("click", addBeacon);
+}
+if (eventButton) {
+  eventButton.addEventListener("click", addEvent);
+}
+
 /**
  * Forms JSON body and sends a POST request
  */
