@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 const assert = require("assert");
 const fs = require("fs");
+const cors = require("cors");
 
 const Booths = require("./models/booth");
 const Beacons = require("./models/beacon");
@@ -38,6 +39,8 @@ mongoose.connection.on("open", function(err) {
 });
 
 mongoose.connect(mongoDbUrl, mongoDbOptions);
+
+app.use(cors());
 
 app.use(require("body-parser").json());
 

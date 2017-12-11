@@ -19,9 +19,9 @@
     "mongoose": "^4.13.x",
     "express": "^4.15.x",
     "fs": "~0.0.1",
-    "assert": "^1.4.x"
+    "assert": "^1.4.x",
+    "cors": "^2.8.x"
   },
   "author": "Anthony Amanse",
   "license": "Apache-2.0"
 }
-
