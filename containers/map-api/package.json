@@ -1,7 +1,7 @@
 {
-  "name": "secret-map-dashboard",
+  "name": "kubernetes-mongoose",
   "main": "app.js",
-  "description": "secret-map-dashboard",
+  "description": "kubernetes-mongoose",
   "version": "1.0.0",
   "private": false,
   "engines": {
@@ -12,15 +12,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IBM/secret-map-dashboard"
+    "url": "https://github.com/IBM/kubernetes-mongoose"
   },
   "dependencies": {
+    "assert": "^1.4.x",
     "body-parser": "^1.17.x",
-    "mongoose": "^4.13.x",
+    "cors": "^2.8.x",
     "express": "^4.15.x",
     "fs": "~0.0.1",
-    "assert": "^1.4.x",
-    "cors": "^2.8.x"
+    "mongoose": "^4.13.x",
+    "pdfkit": "^0.8.3",
+    "router": "^1.3.2",
+    "svg-to-pdfkit": "^0.1.6"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
   },
   "author": "Anthony Amanse",
   "license": "Apache-2.0"
