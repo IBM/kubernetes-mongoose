@@ -6,10 +6,7 @@ let boothSchema = mongoose.Schema({
   unit: String,
   description: String,
   measurementUnit: String,
-  xDimension: Number,
-  yDimension: Number,
-  x: Number,
-  y: Number,
+  shape: {type: Object, required: true},
   contact: String,
 });
 

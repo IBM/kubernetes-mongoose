@@ -6,8 +6,10 @@ let Beacons = require("../models/beacon");
 // eslint-disable-next-line
 let eventSchema = mongoose.Schema({
   eventId: {type: String, unique: true},
-  eventDescription: String,
+  eventName: String,
   location: String,
+  x: Number,
+  y: Number,
   startDate: Date,
   endDate: Date,
   map: [Booths.schema],
