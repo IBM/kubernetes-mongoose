@@ -4,6 +4,8 @@ COPY app.js /
 COPY package.json /
 COPY public /public
 COPY models /models
+COPY routes /routes
+COPY views /views
 
 RUN npm install
 
