@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/IBM/kubernetes-mongoose.svg?branch=master)](https://travis-ci.org/IBM/kubernetes-mongoose)
 
 # Create a Map Server with MongoDB and Mongoose
-In this Code Pattern, we will create a map server using MongoDB and Mongoose. The map server is a Node.js app using the mongoose framework. The map server will be used as a backend for a dashboard. The dashboard will show the booths and draw a map for the user.
+In this Code Pattern, we will create a map server using MongoDB and Mongoose. The map server is a Node.js app using the mongoose framework. The map server will serve the data to generate an SVG of the map for a dashboard. The dashboard will show the booths and draw a map for the user. PDF versions will also be served for the iOS app that will generate an indoor map.
 
 When the reader has completed this Code Pattern, they will understand how to:
 
