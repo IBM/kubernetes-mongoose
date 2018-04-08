@@ -140,7 +140,7 @@ Access the application on:
 
 ### 6. Generate Mock Data
 
-You'll notice that if you go to the `Stored Events` link in the app (or go to 169.60.XX.XX:31873/main), you would not find any Events. That is because we haven't added anything to our database yet.
+You'll notice that if you go to the `Stored Events` link in the app (or go to `169.60.XX.XX:31873/main`), you would not find any Events. That is because we haven't added anything to our database yet.
 
 Go back to the IBM Cloud Dashboard and copy the Mongo command line connection string
 ![](/images/mongo-command.png)
