@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const assert = require("assert");
-const fs = require("fs");
 const cors = require("cors");
 
 const beaconRoute = require("./routes/beacons");
@@ -13,26 +12,13 @@ const renderRoute = require("./routes/renderSvg");
 
 const mongoDbUrl = process.env.MONGODB_URL;
 
-let ca;
-if (process.env.MONGODB_CERT_BASE64) { // if encoded certificate is set in ENV, use it.
-  ca = new Buffer(process.env.MONGODB_CERT_BASE64, "base64");
-} else if (fs.existsSync("/etc/ssl/mongo.cert")) { // if mongo.cert exists, use it
-  ca = [fs.readFileSync("/etc/ssl/mongo.cert")];
-} else if (process.env.UNIT_TEST == "test") { // if a test, don't do anything.
-  console.log("This is a test. Run a local mongoDB.");
-} else {
-  console.log("No certificate provided!");
-}
-
 let mongoDbOptions = {
-  mongos: {
-    useMongoClient: true,
-    ssl: true,
-    sslValidate: true,
-    sslCA: ca,
-  },
+  // ssl: true,
+  // sslValidate: true,
+  useNewUrlParser: true
 };
 
+mongoose.set('useCreateIndex',true);
 mongoose.connection.on("error", function(err) {
   console.log("Mongoose default connection error: " + err);
 });

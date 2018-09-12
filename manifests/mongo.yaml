@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  labels:
+    app: mongodb
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+  type: ClusterIP
+  selector:
+    app: mongodb
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mongodb
+  labels:
+    app: mongodb
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - image: mongo
+          name: mongodb
+          ports:
+            - containerPort: 27017
+# Note:
+# For testing, this Mongo instance will not
+# persist the data and will stay in the container.
+# When the container is deleted or restarted, data will be lost.
+# If you want a persistent Mongo instance,
+# mount a volume in /data/db
