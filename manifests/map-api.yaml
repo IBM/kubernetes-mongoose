@@ -29,18 +29,14 @@ spec:
         app: map-api-test
     spec:
       containers:
-        - image: anthonyamanse/map-api:2.0
+        - image: anthonyamanse/map-api:3.0
+          imagePullPolicy: Always
           name: map-api
           env:
             - name: MONGODB_URL
-              value: ''
-          volumeMounts:
-            - name: mongodb-cert
-              mountPath: "/etc/ssl"
-              readOnly: true
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-url
+                  key: MONGODB_URL
           ports:
             - containerPort: 8080
-      volumes:
-        - name: mongodb-cert
-          secret:
-            secretName: mongodb-cert-secret

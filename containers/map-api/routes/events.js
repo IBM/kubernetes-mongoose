@@ -11,35 +11,38 @@ router.post("/add", function(req, res) {
   // Insert input validation
   let boothIds = req.body.map;
   let beaconIds = req.body.beacons;
+  console.log(boothIds);
+  console.log(beaconIds);
 
-  let queryBooth = Booths.find({"boothId": {$in: boothIds}},
+  Booths.find({"boothId": {$in: boothIds}},
     function(err, booths) {
       if (err) {
+        console.log("error in booth query");
         res.send(err);
       } else {
         req.body.map = booths;
-      }
-    });
+        Beacons.find({"beaconId": {$in: beaconIds}},
+          function(err, beacons) {
+            if (err) {
+              console.log("error in beacon query");
+              res.send(err);
+            } else {
+              req.body.beacons = beacons;
 
-  let queryBeacon = Beacons.find({"beaconId": {$in: beaconIds}},
-    function(err, beacons) {
-      if (err) {
-        res.send(err);
-      } else {
-        req.body.beacons = beacons;
-      }
-    });
+              let addEvent = new Events(req.body);
+              addEvent.save(function(err) {
+                if (err) {
+                  console.log(req.body);
+                  console.log("error in add event");
+                  res.send(err);
+                } else {
+                  res.send("Saved event.");
+                }
+              });
 
-  queryBooth.then(queryBeacon)
-    .then(function() {
-      let addEvent = new Events(req.body);
-      addEvent.save(function(err) {
-        if (err) {
-          res.send(err);
-        } else {
-          res.send("Saved event.");
-        }
-      });
+            }
+          });
+      }
     });
 });
 

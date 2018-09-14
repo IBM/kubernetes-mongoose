@@ -6,30 +6,16 @@ sudo: required
 services:
   - docker
 
-addons:
-  apt:
-    sources:
-      - debian-sid
-    packages:
-      - shellcheck
-
-matrix:
-  fast_finish: true
-
-env:
-  - TEST_RUN="./tests/test-docker.sh"
 
 before_install:
-  - npm install eslint html-lint csslint
+  - sudo apt-get install shellcheck
   - sudo pip install yamllint
-
-install: true
+  - git clone https://github.com/IBM/pattern-ci
 
 before_script:
-  - "./tests/test-csslint.sh"
-  - "./tests/test-eslint.sh"
-  - "./tests/test-html-lint.sh"
-  - "./tests/test-shellcheck.sh"
-  - "./tests/test-yamllint.sh"
+  - "./pattern-ci/tests/shellcheck-lint.sh"
+  - "./pattern-ci/tests/yaml-lint.sh"
 
-script: "$TEST_RUN"
+jobs:
+  include:
+    - script: ./tests/test-docker.sh

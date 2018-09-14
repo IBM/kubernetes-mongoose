@@ -21,15 +21,15 @@
     "ejs": "^2.5.7",
     "express": "^4.15.x",
     "fs": "~0.0.1",
-    "mongoose": "^4.13.x",
+    "mongoose": "^5.2.x",
     "pdfkit": "^0.8.3",
     "router": "^1.3.2",
     "svg-to-pdfkit": "^0.1.6"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
-    "mocha": "^2.4.5"
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
   },
   "author": "Anthony Amanse",
   "license": "Apache-2.0"
